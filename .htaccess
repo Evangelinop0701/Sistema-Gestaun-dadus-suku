@@ -1,0 +1,65 @@
+RewriteEngine On
+
+RewriteRule ^index.html$ media.php [L]
+RewriteRule ^login.html$ login.php [L]
+
+RewriteRule ^populasaun.html$ media.php?module=populasaun&act=popu_kada [L]
+RewriteRule ^dados-populasaun-(.*)\.html$ media.php?module=populasaun&act=read&id_aldeia=$1 [L]
+RewriteRule ^input-popu-(.*)\.html$ media.php?module=populasaun&act=input&id_aldeia=$1 [L]
+RewriteRule ^detalho-populasaun-(.*)\-aldeia-(.*)\.html$ media.php?module=populasaun&act=detalho_popu&id_p=$1&id_a=$2 [L]
+RewriteRule ^update-populasaun-(.*)\-(.*)\.html$ media.php?module=populasaun&act=update&id=$1&id_aldeia=$2 [L]
+RewriteRule ^more-info-(.*)\.html$ media.php?module=populasaun&act=popu_ativos&status=$1 [L]
+
+RewriteRule ^popu-detallu-(.*)\-status-(.*)\.html$ media.php?module=populasaun&act=more_info_detail&id_p=$1&status=$2 [L]
+RewriteRule ^popu-ativos-(.*)\-status-(.*)\.html$ media.php?module=populasaun&act=ativus_mane_feto&sexu=$1&status=$2 [L]
+RewriteRule ^popu-mate-sexu-(.*)\-status-(.*)\.html$ media.php?module=populasaun&act=mate_mane_feto&sexu=$1&status=$2 [L]
+
+
+RewriteRule ^populasaun-mate-(.*)\.html$ media.php?module=popu_mate&act=read&id=$1 [L]
+RewriteRule ^mate-kada-aldeia.html$ media.php?module=popu_mate&act=mate_kada [L]
+RewriteRule ^input-populasaun-mate-(.*)\.html$ media.php?module=popu_mate&act=input_mate&id_al=$1 [L]
+RewriteRule ^update-popu-mate-(.*)\-(.*)\-(.*)\.html$ media.php?module=popu_mate&act=update&id=$1&id_p=$2&id_aldeia=$3 [L]
+RewriteRule ^detalho-mate-(.*)\-aldeia-(.*)\.html$ media.php?module=popu_mate&act=detalho_mate&id_p=$1&id_a=$2 [L]
+
+RewriteRule ^familia.html$ media.php?module=familia&act=read [L]
+RewriteRule ^familia-aldeia-(.*)\.html$ media.php?module=familia&act=kada_aldeia&id=$1 [L]
+RewriteRule ^input-familia-(.*)\.html$ media.php?module=familia&act=input&id=$1 [L]
+RewriteRule ^update-familia-(.*)\-(.*)\.html$ media.php?module=familia&act=update&id=$1&id_aldeia=$2 [L]
+RewriteRule ^all-familia.html$ media.php?module=familia&act=all_familia [L]
+
+RewriteRule ^membro-familia-(.*)\-(.*)\.html$ media.php?module=membru&act=read&id=$1&id_aldeia=$2 [L]
+RewriteRule ^input-membro-(.*)\-(.*)\.html$ media.php?module=membru&act=input&id=$1&id_aldeia=$2 [L]
+RewriteRule ^update-membru-(.*)\-aldeia-(.*)\-familia-(.*)\.html$ media.php?module=membru&act=update&id_m=$1&id_aldeia=$2&id_familia=$3 [L]
+RewriteRule ^familia-jeral.html$ media.php?module=membru&act=familia_jeral [L]
+RewriteRule ^ficha-familia.html$ media.php?module=membru&act=ficha_familia [L]
+RewriteRule ^ficha-familia.html$ media.php?module=membru&act=detalho_ficha [L]
+RewriteRule ^prense-ficha.html$ media.php?module=membru&act=prense_ficha [L]
+RewriteRule ^detalho-ficha-(.*)\-(.*)\.html$ media.php?module=membru&act=detalho_ficha&id=$1&id_aldeia=$2 [L]
+RewriteRule ^detalho-familia-(.*)\-(.*)\.html$ media.php?module=membru&act=detalho_familia&id=$1&id_aldeia=$2 [L]
+
+RewriteRule ^estrutura.html$ media.php?module=estrutura&act=read [L]
+RewriteRule ^input-estrutura-(.*)\.html$ media.php?module=estrutura&act=input&id_e=$1 [L]
+RewriteRule ^update-estrutura-(.*)\.html$ media.php?module=estrutura&act=update&id_e=$1 [L]
+RewriteRule ^detalho-estrutura-(.*)\.html$ media.php?module=estrutura&act=detalho&id_e=$1 [L]
+RewriteRule ^detalho-periodo-(.*)\.html$ media.php?module=estrutura&act=det_periodo&id_p=$1 [L]
+
+RewriteRule ^periodo.html$ media.php?module=periodo&act=read [L]
+RewriteRule ^input-periodo.html$ media.php?module=periodo&act=input [L]
+RewriteRule ^hadia-periodo-(.*)\.html$ media.php?module=periodo&act=update&id_p=$1 [L]
+
+RewriteRule ^relatorio.html$ media.php?module=relatorio&act=read [L]
+RewriteRule ^lista-populasaun.html$ media.php?module=relatorio&act=lista_populasaun [L]
+RewriteRule ^lista-aldeia-(.*)\.html$ media.php?module=relatorio&act=lista_aldeia&id_a=$1 [L]
+RewriteRule ^lista-familia.html$ media.php?module=relatorio&act=lista_familia [L]
+RewriteRule ^lista-familia-aldeia-(.*)\.html$ media.php?module=relatorio&act=familia_aldeia&id_a=$1 [L]
+RewriteRule ^relatorio-aldeia.html$ media.php?module=relatorio&act=read [L]
+
+
+RewriteRule ^users.html$ media.php?module=users&act=read [L]
+RewriteRule ^update-users-(.*)\.html$ media.php?module=users&act=update&id=$1 [L]
+
+RewriteRule ^informasaun.html$ media.php?module=informasaun&act=read [L]
+RewriteRule ^read-more-(.*)\.html$ media.php?module=informasaun&act=read_more&id=$1 [L]
+RewriteRule ^kategoria-(.*)\.html$ media.php?module=informasaun&act=kategoira_info&ktg=$1 [L]
+
+Options All -indexes
